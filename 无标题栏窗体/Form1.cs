@@ -43,10 +43,18 @@ namespace 无标题栏窗体
             base.OnMouseMove(e);
             if (e.Button == MouseButtons.Left)
             {
+                if(e.Y<30)
+                { 
                 //这里一定要判断鼠标左键按下状态，否则会出现一个很奇葩的BUG，不信邪可以试一下~~
-                ReleaseCapture();
-                SendMessage(Handle, 0x00A1, 2, 0);
+                    ReleaseCapture();
+                    SendMessage(Handle, 0x00A1, 2, 0);
+                }
             }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
